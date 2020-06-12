@@ -8,6 +8,7 @@ variable ibmcloud_api_key {
 
 variable resource_group {
     description = "Name of resource group to provision resources"
+    default     = "testrg1"
 }
 
 ##############################################################################
