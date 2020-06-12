@@ -61,24 +61,24 @@ variable enable_public_gateway {
 # Network variables
 ##############################################################################
 
-variable acl_rules {
-  default = [
-    {
-      name        = "egress"
-      action      = "allow"
-      source      = "0.0.0.0/0"
-      destination = "0.0.0.0/0"
-      direction   = "inbound"
-    },
-    {
-      name        = "ingress"
-      action      = "allow"
-      source      = "0.0.0.0/0"
-      destination = "0.0.0.0/0"
-      direction   = "outbound"
-    }
-  ]
-}
+# variable acl_rules {
+#   default = [
+#     {
+#       name        = "egress"
+#       action      = "allow"
+#       source      = "0.0.0.0/0"
+#       destination = "0.0.0.0/0"
+#       direction   = "inbound"
+#     },
+#     {
+#       name        = "ingress"
+#       action      = "allow"
+#       source      = "0.0.0.0/0"
+#       destination = "0.0.0.0/0"
+#       direction   = "outbound"
+#     }
+#   ]
+# }
 
 variable cidr_blocks {
     description = "List of CIDR blocks for the subnets"

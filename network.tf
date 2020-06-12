@@ -6,23 +6,20 @@ resource ibm_is_network_acl multizone_acl {
   
   name = "${var.unique_id}-multizone-acl"
   vpc  = "${var.generation == 1 ? null : ibm_is_vpc.vpc.id}"
-
-  dynamic rules {
-
-    for_each = "${var.acl_rules}"
-
-    content {
-      name        = "${rules.value.name}"
-      action      = "${rules.value.action}"
-      source      = "${rules.value.source}"
-      destination = "${rules.value.destination}"
-      direction   = "${rules.value.direction}"
-    }
-
+  rules {
+      name   = "egress"
+      action = "allow"
+      source      = "0.0.0.0/0"
+      destination = "0.0.0.0/0"
+      direction   = "outbound"
   }
-
-  
-
+  rules {
+      name   = "ingress"
+      action = "allow"
+      source      = "0.0.0.0/0"
+      destination = "0.0.0.0/0"
+      direction   = "inbound"
+  }
 }
 
 ##############################################################################
