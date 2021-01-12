@@ -30,6 +30,7 @@ variable "unique_id" {
 variable "tags" {
   description = "A list of tags for resources created"
   default     = ["multizone-vpc-module"]
+  type        = set(string)
 }
 
 ##############################################################################
